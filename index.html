@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LDP Websites â€” B2B Website Marketplace | Buy Professional Websites</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0f172a;--primary-light:#1e293b;--accent:#3b82f6;--accent-light:#60a5fa;--gold:#f59e0b;--surface:#fff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-500:#64748b;--gray-700:#334155;--gray-900:#0f172a;--radius:12px;--radius-lg:20px;--shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);--shadow-lg:0 10px 40px rgba(0,0,0,0.08);--transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--gray-50);color:var(--gray-900);line-height:1.6}
+h1,h2,h3{font-family:Space Grotesk,sans-serif;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;border:none;transition:var(--transition)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(59,130,246,0.3)}
+.btn-secondary{background:var(--gray-900);color:#fff}
+.btn-secondary:hover{background:var(--primary-light);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-sm{padding:8px 16px;font-size:13px}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.badge-blue{background:rgba(59,130,246,0.1);color:var(--accent)}
+.badge-gold{background:rgba(245,158,11,0.1);color:var(--gold)}
+.badge-green{background:rgba(16,185,129,0.1);color:#10b981}
+.section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:36px;color:var(--gray-900);margin-bottom:12px}
+.section-title p{color:var(--gray-500);font-size:16px;max-width:560px;margin:0 auto}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-family:Space Grotesk,sans-serif;font-size:22px;font-weight:700;color:var(--gray-900);display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--gray-500);font-size:14px;font-weight:500;transition:var(--transition)}
+.nav-links a:hover{color:var(--gray-900)}
+.hero{padding:140px 24px 80px;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,0.15),transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent 70%)}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.hero h1{font-size:52px;color:#fff;margin-bottom:16px;line-height:1.15}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--gray-300);margin-bottom:32px;max-width:560px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:48px}
+.hero-stats .stat{text-align:center}
+.hero-stats .num{font-size:28px;font-weight:700;color:#fff;font-family:Space Grotesk,sans-serif}
+.hero-stats .lbl{font-size:13px;color:var(--gray-500)}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.category-card{padding:32px;text-align:center;border:1px solid var(--gray-200);border-radius:var(--radius-lg);transition:var(--transition);background:var(--surface)}
+.category-card:hover{border-color:var(--accent);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.category-card .icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px}
+.category-card h3{font-size:18px;margin-bottom:8px}
+.category-card p{font-size:14px;color:var(--gray-500);margin-bottom:16px}
+.category-card .price{font-size:28px;font-weight:700;color:var(--accent);font-family:Space Grotesk,sans-serif}
+.category-card .price span{font-size:14px;color:var(--gray-500);font-weight:400}
+.listing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.listing-card{border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);transition:var(--transition)}
+.listing-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.listing-card .preview{height:200px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.listing-card .preview img{width:100%;height:100%;object-fit:cover}
+.listing-card .preview .overlay{position:absolute;top:12px;right:12px}
+.listing-card .body{padding:24px}
+.listing-card .body h3{font-size:17px;margin-bottom:4px}
+.listing-card .body .seller{font-size:13px;color:var(--gray-500);margin-bottom:8px}
+.listing-card .body .seller i{color:var(--accent)}
+.listing-card .body .desc{font-size:14px;color:var(--gray-700);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.listing-card .body .tags{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.listing-card .body .footer{display:flex;align-items:center;justify-content:space-between}
+.listing-card .body .footer .price{font-size:22px;font-weight:700;color:var(--accent);font-family:Space Grotesk,sans-serif}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.how-step{text-align:center;padding:32px}
+.how-step .step-num{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin:0 auto 16px;font-family:Space Grotesk,sans-serif}
+.how-step h3{font-size:17px;margin-bottom:6px}
+.how-step p{font-size:14px;color:var(--gray-500)}
+.cta{background:linear-gradient(135deg,#0f172a,#1e293b);text-align:center;padding:80px 24px}
+.cta h2{font-size:36px;color:#fff;margin-bottom:12px}
+.cta p{color:var(--gray-400);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.footer{background:var(--gray-900);color:var(--gray-300);padding:60px 0 32px;border-top:1px solid var(--gray-700)}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:40px}
+.footer h3{color:#fff;margin-bottom:16px;font-size:16px}
+.footer p,.footer a{font-size:14px;color:var(--gray-500)}
+.footer a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:12px;margin-top:12px}
+.footer-social a{width:36px;height:36px;border-radius:8px;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.footer-social a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid var(--gray-700);font-size:13px;color:var(--gray-500)}
+.toast{position:fixed;bottom:24px;right:24px;z-index:3000;background:var(--gray-900);color:#fff;padding:16px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:none;align-items:center;gap:12px;border-left:4px solid var(--accent);animation:slideIn 0.3s ease}
+.toast.show{display:flex}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@media(max-width:768px){
+.hero h1{font-size:36px}
+.hero-stats{gap:20px;flex-wrap:wrap}
+.hero-stats .stat{flex:1;min-width:80px}
+.nav-links{display:none}
+.listing-grid{grid-template-columns:1fr}
+.section-title h2{font-size:28px}
+}
+.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2000;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal-content{background:var(--surface);border-radius:var(--radius-lg);padding:36px;max-width:500px;width:90%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;font-size:20px;cursor:pointer;color:var(--gray-500);background:none;border:none;transition:var(--transition)}
+.modal-close:hover{color:var(--gray-900)}
+.modal h2{font-size:22px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:var(--gray-700);margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:2px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:Inter,sans-serif;transition:var(--transition)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(59,130,246,0.1)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo"><i class="fas fa-code"></i> LDP<span>Websites</span></a>
+    <ul class="nav-links">
+      <li><a href="#marketplace">Marketplace</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><button class="btn btn-primary btn-sm" onclick="openSellModal()"><i class="fas fa-plus"></i> List Your Service</button></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="badge badge-blue" style="margin-bottom:16px"><i class="fas fa-store"></i> B2B Website Marketplace</span>
+      <h1>Buy &amp; Sell Professional<br><span>Websites</span> Made Easy</h1>
+      <p>The premier B2B marketplace connecting businesses with top web developers. Browse ready-made websites or get a custom build.</p>
+      <div class="hero-buttons">
+        <a href="#marketplace" class="btn btn-primary"><i class="fas fa-search"></i> Browse Websites</a>
+        <a href="#how" class="btn btn-outline" style="border-color:#fff;color:#fff"><i class="fas fa-play-circle"></i> How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">50+</div><div class="lbl">Website Templates</div></div>
+        <div class="stat"><div class="num">25+</div><div class="lbl">Expert Developers</div></div>
+        <div class="stat"><div class="num">200+</div><div class="lbl">Businesses Served</div></div>
+        <div class="stat"><div class="num">98%</div><div class="lbl">Satisfaction Rate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Website Categories</h2>
+      <p>Find the perfect website for your business from our curated categories.</p>
+    </div>
+    <div class="categories">
+      <div class="category-card fade-in"><div class="icon" style="background:rgba(59,130,246,0.1);color:var(--accent)"><i class="fas fa-shopping-cart"></i></div><h3>E-Commerce</h3><p>Full online stores with payment integration, inventory, and shipping management.</p><div class="price">R2,500 <span>starting</span></div></div>
+      <div class="category-card fade-in"><div class="icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="fas fa-building"></i></div><h3>Corporate</h3><p>Professional company websites with portfolios, team pages, and contact forms.</p><div class="price">R1,500 <span>starting</span></div></div>
+      <div class="category-card fade-in"><div class="icon" style="background:rgba(245,158,11,0.1);color:var(--gold)"><i class="fas fa-user-tie"></i></div><h3>Portfolio</h3><p>Personal portfolios for creatives, photographers, and professionals.</p><div class="price">R800 <span>starting</span></div></div>
+      <div class="category-card fade-in"><div class="icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6"><i class="fas fa-blog"></i></div><h3>Blog &amp; Content</h3><p>Content-driven sites with CMS, SEO optimization, and social media integration.</p><div class="price">R1,200 <span>starting</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="marketplace" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Featured Listings</h2>
+      <p>Hand-picked websites from our top-rated developers. Ready to launch.</p>
+    </div>
+    <div class="listing-grid" id="listingGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="how" style="background:var(--gray-100)">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>How It Works</h2>
+      <p>Whether you're buying or selling, the process is simple and transparent.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step fade-in"><div class="step-num">1</div><h3>Browse</h3><p>Explore our marketplace of professionally built websites across all categories.</p></div>
+      <div class="how-step fade-in"><div class="step-num">2</div><h3>Select</h3><p>Choose a website that fits your needs and budget. Read reviews and compare options.</p></div>
+      <div class="how-step fade-in"><div class="step-num">3</div><h3>Purchase</h3><p>Buy securely through our platform. We handle the transaction and transfer.</p></div>
+      <div class="how-step fade-in"><div class="step-num">4</div><h3>Launch</h3><p>Get your website deployed with hosting setup, domain configuration, and support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 class="fade-in">Are You a Web Developer?</h2>
+    <p class="fade-in">List your website templates and services on LDP Websites. Reach hundreds of businesses looking for professional web solutions.</p>
+    <button class="btn btn-primary btn-lg fade-in" onclick="openSellModal()"><i class="fas fa-rocket"></i> Start Selling Today</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3><i class="fas fa-code" style="color:var(--accent)"></i> LDP Websites</h3><p>The B2B marketplace connecting businesses with professional web developers. Launch your online presence today.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+      <div><h3>Marketplace</h3><p><a href="#categories">Categories</a><br><a href="#marketplace">Listings</a><br><a href="#">Popular</a><br><a href="#">New Arrivals</a></p></div>
+      <div><h3>For Developers</h3><p><a href="#" onclick="openSellModal();return false">List a Website</a><br><a href="#">Developer Guide</a><br><a href="#">Pricing</a><br><a href="#">Success Stories</a></p></div>
+      <div><h3>Support</h3><p><a href="#">Help Center</a><br><a href="#">Contact Us</a><br><a href="#">Terms of Service</a><br><a href="#">Privacy Policy</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 LDP Websites. All rights reserved. Built with <i class="fas fa-heart" style="color:var(--accent)"></i> in South Africa.</p></div>
+  </div>
+</footer>
+
+<!-- Sell Modal -->
+<div class="modal" id="sellModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('sellModal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <h2>List Your Website Service</h2>
+    <form id="sellForm">
+      <div class="form-group"><label>Developer Name</label><input type="text" id="devName" required></div>
+      <div class="form-group"><label>Email</label><input type="email" id="devEmail" required></div>
+      <div class="form-group"><label>Website Title</label><input type="text" id="listingTitle" required></div>
+      <div class="form-group"><label>Category</label><select id="listingCategory"><option>E-Commerce</option><option>Corporate</option><option>Portfolio</option><option>Blog & Content</option><option>Custom Build</option></select></div>
+      <div class="form-group"><label>Price (R)</label><input type="number" id="listingPrice" required></div>
+      <div class="form-group"><label>Description</label><textarea id="listingDesc" rows="3" required></textarea></div>
+      <div class="form-group"><label>Technologies (comma separated)</label><input type="text" id="listingTech" placeholder="HTML, CSS, JavaScript, React"></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Submit Listing</button>
+    </form>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <h2>Interested in This Website</h2>
+    <form id="contactForm">
+      <div class="form-group"><label>Your Name</label><input type="text" id="buyerName" required></div>
+      <div class="form-group"><label>Email</label><input type="email" id="buyerEmail" required></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="buyerPhone"></div>
+      <div class="form-group"><label>Message</label><textarea id="buyerMsg" rows="3" placeholder="Tell the developer about your project..."></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+    </form>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><i class="fas fa-check-circle" style="color:var(--accent)"></i><span id="toastMsg">Success!</span></div>
+
+<script>
+const APP={listings:JSON.parse(localStorage.getItem('ldp_listings')||'[]'),inquiries:JSON.parse(localStorage.getItem('ldp_inquiries')||'[]')}
+function save(){localStorage.setItem('ldp_listings',JSON.stringify(APP.listings));localStorage.setItem('ldp_inquiries',JSON.stringify(APP.inquiries))}
+function toast(msg){document.getElementById('toastMsg').textContent=msg;document.getElementById('toast').classList.add('show');setTimeout(()=>document.getElementById('toast').classList.remove('show'),3000)}
+if(APP.listings.length===0){APP.listings=[
+{id:1,dev:"Thabo M.",title:"ShopSwift E-Commerce",cat:"E-Commerce",price:3500,desc:"Complete online store with cart, checkout, payment gateway, and admin dashboard. Mobile responsive.",tech:["React","Node.js","Stripe","MongoDB"],img:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"},
+{id:2,dev:"Nosipho D.",title:"BizPro Corporate",cat:"Corporate",price:2200,desc:"Professional corporate website with team bios, services showcase, blog, and contact form. Ready to deploy.",tech:["Next.js","Tailwind","Prisma","PostgreSQL"],img:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop"},
+{id:3,dev:"James N.",title:"Artisan Portfolio",cat:"Portfolio",price:1200,desc:"Stunning photography portfolio with lightbox gallery, client proofing, and booking calendar.",tech:["Vue.js","GSAP","Firebase"],img:"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop"},
+{id:4,dev:"Zanele K.",title:"ContentHub Blog",cat:"Blog & Content",price:1800,desc:"SEO-optimized blog platform with CMS, newsletter integration, analytics, and social sharing.",tech:["Gatsby","Contentful","Tailwind"],img:"https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=400&h=250&fit=crop"},
+{id:5,dev:"Lungile M.",title:"MediCare Clinic",cat:"Corporate",price:2800,desc:"Medical practice website with appointment booking, patient portal, telehealth integration.",tech:["React","Django","PostgreSQL","Twilio"],img:"https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&h=250&fit=crop"},
+{id:6,dev:"Sipho N.",title:"UrbanStore E-Commerce",cat:"E-Commerce",price:4200,desc:"Multi-vendor marketplace with seller dashboards, commission system, and inventory management.",tech:["Next.js","Node.js","MongoDB","AWS"],img:"https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=250&fit=crop"}
+];save()}
+function renderListings(){const grid=document.getElementById('listingGrid');grid.innerHTML=APP.listings.map(l=>'<div class="listing-card fade-in"><div class="preview"><img src="'+l.img+'" alt="'+l.title+'" loading="lazy"><div class="overlay"><span class="badge badge-blue">'+l.cat+'</span></div></div><div class="body"><h3>'+l.title+'</h3><div class="seller"><i class="fas fa-user"></i> '+l.dev+'</div><p class="desc">'+l.desc+'</p><div class="tags">'+l.tech.map(t=>'<span class="badge badge-green">'+t+'</span>').join('')+'</div><div class="footer"><div class="price">R'+l.price.toLocaleString()+'</div><button class="btn btn-primary btn-sm" onclick="openContactModal('+l.id+')"><i class="fas fa-shopping-cart"></i> Inquire</button></div></div></div>').join('')}
+function openSellModal(){document.getElementById('sellModal').classList.add('open')}
+document.getElementById('sellForm').onsubmit=function(e){e.preventDefault();const l={id:Date.now(),dev:document.getElementById('devName').value,email:document.getElementById('devEmail').value,title:document.getElementById('listingTitle').value,cat:document.getElementById('listingCategory').value,price:Number(document.getElementById('listingPrice').value),desc:document.getElementById('listingDesc').value,tech:document.getElementById('listingTech').value.split(',').map(t=>t.trim()),img:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"};APP.listings.unshift(l);save();renderListings();this.reset();document.getElementById('sellModal').classList.remove('open');toast('Your listing has been submitted!');initObserver()};
+function openContactModal(id){const l=APP.listings.find(x=>x.id===id);if(!l)return;document.getElementById('contactModal').dataset.listingId=id;document.getElementById('contactModal').classList.add('open');document.querySelector('#contactModal h2').textContent='Interested in "'+l.title+'"'}
+document.getElementById('contactForm').onsubmit=function(e){e.preventDefault();const inquiry={id:Date.now(),listingId:Number(document.getElementById('contactModal').dataset.listingId),name:document.getElementById('buyerName').value,email:document.getElementById('buyerEmail').value,phone:document.getElementById('buyerPhone').value,message:document.getElementById('buyerMsg').value};APP.inquiries.push(inquiry);save();this.reset();document.getElementById('contactModal').classList.remove('open');toast('Inquiry sent! The developer will contact you.')};
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+function initObserver(){document.querySelectorAll('.fade-in').forEach(e=>observer.observe(e))}
+initObserver();renderListings();
+</script>
+</body>
+</html>
